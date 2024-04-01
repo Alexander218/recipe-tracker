@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/recipes.css" %}">
+    <title>Scrumptious Recipes</title>
+</head>
+<body>
+    <header>
+        <nav id="nav-links"><a href="{% url 'recipe_list' %}">Main page</a></nav>
+    </header>
+    <h1 id="site-headers">Scrumptious Recipes</h1>
+    <h2>All the food that's fit to eat</h2>
+    <div class="recipe-list-page">
+        {% for recipe in recipe_list %}
+        <div class="list-item">
+            <a href="{% url 'show_recipe' recipe.id %}">{{ recipe.title }}</a>
+            <img src="{{ recipe.picture }}"
+                alt="image of lasagna presented on a dinner plate and table"
+                width="400"
+                height="500"/>
+            <p id="food-rating">
+                4.5 stars
+            </p>
+            <p id="food-description">
+                {{ recipe.description }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+    <footer>
+        <p>Made with love by Scrumptious Recipes</p>
+    </footer>
+</body>
+</html>

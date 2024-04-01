@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {{ recipe_object.title }}
+    </title>
+    <link rel="stylesheet" href="{% static "css/recipes.css" %}">
+</head>
+<body>
+    <header id="header">
+        <nav id="nav-links">
+            <a href="{% url 'recipe_list' %}">Main page</a>
+        </nav>
+
+    </header>
+    <main>
+        <h1>{{ recipe_object.title }}</h1>
+        <img src="{{ recipe_object.picture }}" width="500" height="400" margin-left="auto" margin-right="auto">
+        <p id="food-rating">
+            4.5 stars
+        </p>
+        <p>{{ recipe_object.description }}</p>
+        <h2 id="ingredients">Ingredients</th>
+        <div class="ingredients-table">
+            <table>
+                <tr>
+                    <td><b>Amount </b></td>
+                    <td><b>Food Item</b></td>
+                </tr>
+                <tr>
+                    <td>1 cup</td>
+                    <td>Green beans</td>
+                </tr>
+                <tr>
+                    <td>3 ears</td>
+                    <td>Fresh corn</td>
+                </tr>
+                <tr>
+                    <td>2 cups</td>
+                    <td>Tomatillo salsa</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Corn tortillas</td>
+                </tr>
+                <tr>
+                    <td>0.5 cup</td>
+                    <td>Cotija cheese</td>
+                </tr>
+            </table>
+        </div>
+
+            <h2>Steps</h2>
+            <ol id="order-list-steps">
+                <li>Blanch the green beans</li>
+                <li>Grill the green beans and the ears of corn</li>
+                <li>Chop the green beans</li>
+                <li>Slice the corn off the cob</li>
+                <li>Grill the tortillas</li>
+                <li>Assemble the taco with veggies, salsa, and cheese</li>
+                <li><em><b>Enjoy</em></b></li>
+            </ol>
+
+    </main>
+    <footer>
+        <p>Made with love by Scrumptious Recipes</p>
+    </footer>
+</body>
+</html>
