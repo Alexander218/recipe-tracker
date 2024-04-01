@@ -14,7 +14,10 @@
 </head>
 <body>
     <header>
-        <nav id="nav-links"><a href="{% url 'recipe_list' %}">Main page</a></nav>
+        <nav id="nav-links">
+            <a href="{% url 'recipe_list' %}">Main Page</a>
+            <a href="{% url 'create_recipe' %}">Create Recipe</a>
+        </nav>
     </header>
     <h1 id="site-headers">Scrumptious Recipes</h1>
     <h2>All the food that's fit to eat</h2>

@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {{ recipe_object.title }}
+    </title>
+    <link rel="stylesheet" href="{% static "css/recipes.css" %}">
+</head>
+<body>
+    <header id="header">
+        <nav id="nav-links">
+            <a href="{% url 'recipe_list' %}">Main page</a>
+        </nav>
+
+    </header>
+    <main>
+        <h1>Edit {{ post_recipe.title }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Create</button>
+        </form>
+    </main>
+    <footer>
+        <p>Made with love by Scrumptious Recipes</p>
+    </footer>
+</body>
+</html>
